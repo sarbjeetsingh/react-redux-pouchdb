@@ -5,7 +5,7 @@ import PouchDB from "pouchdb";
 import { persistentStore } from "redux-pouchdb";
 
 const db = new PouchDB("users");
-var remoteCouch = "http://127.0.0.1:5984/users";
+var remoteCouch = "http://192.168.1.23:5984/users";
 
 var opts = { live: true };
 db.replicate.to(remoteCouch, opts);

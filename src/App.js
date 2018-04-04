@@ -43,7 +43,9 @@ class App extends Component {
         <hr />
         <ul>
           {this.props.users &&
-            this.props.users.map((user, index) => <li>{user.name}</li>)}
+            this.props.users.map((user, index) => (
+              <li key={index}>{user.username}</li>
+            ))}
         </ul>
       </div>
     );
@@ -52,7 +54,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user.userList
+    users: state.user.users
   };
 };
 
